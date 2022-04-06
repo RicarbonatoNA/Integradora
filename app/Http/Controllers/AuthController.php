@@ -101,4 +101,10 @@ class AuthController extends Controller
         $user = User::all();
         return $user;
     }
+    
+    public function Eliminar($id){
+        $users = User::find($id);
+        $users -> delete();
+        return $users;
+    }
 }

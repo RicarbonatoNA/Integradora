@@ -30,6 +30,7 @@ Route::group([
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);
     Route::get('/Ver', [AuthController::class, 'Ver']);
+    Route::delete('/Eliminar/{id}', [AuthController::class, 'Eliminar']);
     
     Route::group(['prefix' => 'movimiento'], function(){
         Route::get('/InsertarMovimiento',[MovimientoCont::class, 'InsertarMovimiento']);
