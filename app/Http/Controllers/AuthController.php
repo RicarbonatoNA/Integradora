@@ -98,7 +98,7 @@ class AuthController extends Controller
         ]);
     }
     public function Ver(){
-        $response = Users::all();
+        $response = User::all();
         return $response;
     }
 }
