@@ -21,6 +21,7 @@ use App\Http\Controllers\HumoCont;
 */
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
+Route::get('/Ver', [AuthController::class, 'Ver']);
 
 Route::group([
     'middleware' => 'api',
