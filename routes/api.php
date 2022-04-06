@@ -21,7 +21,6 @@ use App\Http\Controllers\HumoCont;
 */
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
-Route::get('/Ver', [AuthController::class, 'Ver']);
 
 Route::group([
     'middleware' => 'api',
@@ -30,6 +29,7 @@ Route::group([
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);
+    Route::get('/Ver', [AuthController::class, 'Ver']);
     
     Route::group(['prefix' => 'movimiento'], function(){
         Route::get('/InsertarMovimiento',[MovimientoCont::class, 'InsertarMovimiento']);
