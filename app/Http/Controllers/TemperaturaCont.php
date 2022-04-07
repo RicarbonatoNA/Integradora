@@ -10,7 +10,7 @@ class TemperaturaCont extends Controller
 {
     public function InsertarTemperatura(){ 
         
-        $response = Http::withHeaders(['X-AIO-Key' => env('ADAFRUIT_KEY')])
+        $response = Http::get(['X-AIO-Key' => env('ADAFRUIT_KEY')])
         ->get('https://io.adafruit.com/api/v2/juliomena1806/feeds/temperatura1/data/last');
         $value = $response['value'];
         $created_at = $response['created_at'];
