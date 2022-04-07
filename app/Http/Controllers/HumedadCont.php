@@ -10,7 +10,7 @@ class HumedadCont extends Controller
 {
     public function InsertarHumedad(){ 
         
-        $response = Http::withHeaders(['X-AIO-Key' => 'aio_pysh81IeYVTz86xN2MrmQgrTqWEp'])
+        $response = Http::withHeaders(['X-AIO-Key' => 'aio_HZJb40gw75BKFBuyv3nzLrPmtnNW'])
         ->get('https://io.adafruit.com/api/v2/juliomena1806/feeds/humendad/data/last');
         $value = $response['value'];
         $created_at = $response['created_at'];
