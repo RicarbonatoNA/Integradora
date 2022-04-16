@@ -8,6 +8,7 @@ use App\Http\Controllers\HumedadCont;
 use App\Http\Controllers\UltrasonicoCont;
 use App\Http\Controllers\GasCont;
 use App\Http\Controllers\HumoCont;
+use App\Http\Controllers\FlamaCont;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +61,10 @@ Route::group([
     Route::group(['prefix' => 'humo'], function(){
         Route::get('/InsertarHumo',[HumoCont::class, 'InsertarHumo']);
         Route::get('/MostrarHumo',[HumoCont::class, 'MostrarHumo']);
+    });
+    Route::group(['prefix' => 'flama'], function(){
+        Route::get('/InsertarFlama',[FlamaCont::class, 'InsertarFlama']);
+        Route::get('/MostrarFlama',[FlamaCont::class, 'MostrarFlama']);
     });
 });
 
