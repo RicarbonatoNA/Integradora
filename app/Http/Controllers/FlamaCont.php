@@ -8,9 +8,9 @@ use App\Models\Flama;
 
 class FlamaCont extends Controller
 {
-    public function InsertarFlama(){ 
+    public function MostrarFlama(){ 
         
-        $response = Http::withHeaders(['X-AIO-Key' => 'aio_HZJb40gw75BKFBuyv3nzLrPmtnNW'])
+        $response = Http::withHeaders(['X-AIO-Key' => env('ADAFRUIT_KEY')])
         ->get('https://io.adafruit.com/api/v2/juliomena1806/feeds/flame/data/last');
         $value = $response['value'];
         $created_at = $response['created_at'];
@@ -26,7 +26,7 @@ class FlamaCont extends Controller
          return $registro;
     } 
 
-    public function MostrarFlama(){
+    public function MostrarRegistro(){
         $flama = Flama::all();
         return $flama;
     }

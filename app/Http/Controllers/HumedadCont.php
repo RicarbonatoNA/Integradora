@@ -8,9 +8,9 @@ use App\Models\humedad;
 
 class HumedadCont extends Controller
 {
-    public function InsertarHumedad(){ 
+    public function MostrarHumedad(){ 
         
-        $response = Http::withHeaders(['X-AIO-Key' => 'aio_HZJb40gw75BKFBuyv3nzLrPmtnNW'])
+        $response = Http::withHeaders(['X-AIO-Key' => env('ADAFRUIT_KEY')])
         ->get('https://io.adafruit.com/api/v2/juliomena1806/feeds/humendad/data/last');
         $value = $response['value'];
         $created_at = $response['created_at'];
@@ -26,7 +26,7 @@ class HumedadCont extends Controller
          return $registro;
     } 
 
-    public function MostrarHumedad(){
+    public function MostrarRegistro(){
         $humedad = Humedad::all();
         return $humedad;
     }

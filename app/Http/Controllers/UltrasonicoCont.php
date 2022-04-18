@@ -8,9 +8,9 @@ use App\Models\ultrasonico;
 
 class UltrasonicoCont extends Controller
 {
-    public function InsertarDistancia(){ 
+    public function MostrarDistancia(){ 
         
-        $response = Http::withHeaders(['X-AIO-Key' => 'aio_HZJb40gw75BKFBuyv3nzLrPmtnNW'])
+        $response = Http::withHeaders(['X-AIO-Key' => env('ADAFRUIT_KEY')])
         ->get('https://io.adafruit.com/api/v2/juliomena1806/feeds/ultrasonico1/data/last');
         $value = $response['value'];
         $created_at = $response['created_at'];
@@ -26,7 +26,7 @@ class UltrasonicoCont extends Controller
          return $registro;
     } 
 
-    public function MostrarDistancia(){
+    public function MostrarRegistro(){
         $ultrasonico = Ultrasonico::all();
         return $ultrasonico;
     }

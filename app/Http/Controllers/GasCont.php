@@ -8,9 +8,9 @@ use App\Models\gas;
 
 class GasCont extends Controller
 {
-    public function InsertarGas(){ 
+    public function MostrarGas(){ 
         
-        $response = Http::withHeaders(['X-AIO-Key' => 'aio_HZJb40gw75BKFBuyv3nzLrPmtnNW'])
+        $response = Http::withHeaders(['X-AIO-Key' => env('ADAFRUIT_KEY')])
         ->get('https://io.adafruit.com/api/v2/juliomena1806/feeds/humendad/data/last');
         $value = $response['value'];
         $created_at = $response['created_at'];
@@ -26,7 +26,7 @@ class GasCont extends Controller
          return $registro;
     } 
 
-    public function MostrarGas(){
+    public function MostrarRegistro(){
         $gas = Gas::all();
         return $gas;
     }

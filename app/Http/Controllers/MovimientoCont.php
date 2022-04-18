@@ -9,9 +9,9 @@ use App\Models\movimiento;
 
 class MovimientoCont extends Controller
 {
-    public function InsertarMovimiento(){ 
+    public function MostrarMovimiento(){ 
         
-        $response = Http::withHeaders(['X-AIO-Key' => 'aio_HZJb40gw75BKFBuyv3nzLrPmtnNW'])
+        $response = Http::withHeaders(['X-AIO-Key' => env('ADAFRUIT_KEY')])
         ->get('https://io.adafruit.com/api/v2/juliomena1806/feeds/movimiento/data/last');
         $value = $response['value'];
         $created_at = $response['created_at'];
@@ -27,7 +27,7 @@ class MovimientoCont extends Controller
          return $registro;
     } 
 
-    public function MostrarMovimiento(){
+    public function MostrarRegistro(){
         $movimiento = Movimiento::all();
         return $movimiento;
     }
