@@ -35,18 +35,18 @@ Route::group([
     Route::delete('/Eliminar/{id}', [AuthController::class, 'Eliminar']);
     
     Route::group(['prefix' => 'movimiento'], function(){
-        Route::get('/MostrarMovimiento',[MovimientoCont::class, 'InsertarMovimiento']);
-        Route::get('/MostrarRegistro',[MovimientoCont::class, 'MostrarMovimiento']);
+        Route::get('/MostrarMovimiento',[MovimientoCont::class, 'MostrarMovimiento']);
+        Route::get('/MostrarRegistro',[MovimientoCont::class, 'MostrarRegistro']);
     });
 
     Route::group(['prefix' => 'temperatura'], function(){
-        Route::get('/MostrarTemperatura',[TemperaturaCont::class, 'InsertarTemperatura']);
-        Route::get('/MostrarRegistro',[TemperaturaCont::class, 'MostrarTemperatura']);
+        Route::get('/MostrarTemperatura',[TemperaturaCont::class, 'MostrarTemperatura']);
+        Route::get('/MostrarRegistro',[TemperaturaCont::class, 'MostrarRegistro']);
     });
 
     Route::group(['prefix' => 'humedad'], function(){
-        Route::get('/MostrarHumedad',[HumedadCont::class, 'InsertarHumedad']);
-        Route::get('/MostrarRegistro',[HumedadCont::class, 'MostrarHumedad']);
+        Route::get('/MostrarHumedad',[HumedadCont::class, 'MostrarHumedad']);
+        Route::get('/MostrarRegistro',[HumedadCont::class, 'MostrarRegistro']);
     });
 
     Route::group(['prefix' => 'distancia'], function(){
@@ -55,8 +55,8 @@ Route::group([
     });
 
     Route::group(['prefix' => 'gas'], function(){
-        Route::get('/MostrarGas',[GasCont::class, 'InsertarGas']);
-        Route::get('/MostrarRegistro',[GasCont::class, 'MostrarGas']);
+        Route::get('/MostrarGas',[GasCont::class, 'MostrarGas']);
+        Route::get('/MostrarRegistro',[GasCont::class, 'MostrarRegistro']);
     });
 
     //Route::group(['prefix' => 'humo'], function(){
@@ -65,8 +65,8 @@ Route::group([
     //});
 
     Route::group(['prefix' => 'flama'], function(){
-        Route::get('/MostrarFlama',[FlamaCont::class, 'InsertarFlama']);
-        Route::get('/MostrarRegistro',[FlamaCont::class, 'MostrarFlama']);
+        Route::get('/MostrarFlama',[FlamaCont::class, 'MostrarFlama']);
+        Route::get('/MostrarRegistro',[FlamaCont::class, 'MostrarRegistro']);
     });
 
     Route::group(['prefix' => 'casa'], function(){
